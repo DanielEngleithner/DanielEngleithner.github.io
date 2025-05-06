@@ -3,6 +3,11 @@ body {
     max-width: 700px;
     margin: 0 auto;
     font-family: sans-serif;
+
+    background-image: url('picture.png'); /* Pfad anpassen */
+    background-size: cover; /* oder contain */
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 /*
 #pacman {
@@ -18,10 +23,10 @@ body {
 
 
 #pacman {
-    width: 100%;
+    width: 87%;
     display: block;
     margin: 20px auto;
-    border: solid red 4px;
+    background: transparent;
 }
 
 
@@ -36,12 +41,15 @@ h1 {
     font-family: 'Permanent Marker', cursive;
     text-align: center;
     color: yellow;
+    font-size: 50px;
+
 }
 
 h2 {
     font-family: 'Permanent Marker', cursive;
     text-align: center;
     color: yellow;
+
 }
 
 p {
@@ -55,28 +63,41 @@ p {
     top: 20px;
     color: yellow;
     font-family: 'Permanent Marker', cursive;
-    font-size: 14px;
+    font-size: 30px;
     z-index: 100;
+
+/*Für die Schrift Border*/
+    text-shadow:
+            -2px -2px 0 black,
+            2px -2px 0 black,
+            -2px  2px 0 black,
+            2px  2px 0 black,
+            0px -2px 0 black,
+            0px  2px 0 black,
+            -2px  0px 0 black,
+            2px  0px 0 black;
 }
 
 canvas {
 
 }
 
-
-
 .score {
-    position: fixed;       /* Fixiert die Position relativ zum Browserfenster */
-    top: 10px;             /* Abstand von oben */
-    left: 10px;            /* Abstand von links */
-    background-color: #f0f0f0;  /* Hellgrauer Hintergrund */
-    padding: 10px 15px;    /* Innenabstand */
-    border-radius: 5px;    /* Abgerundete Ecken */
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* Leichter Schatten */
-    z-index: 1000;         /* Damit es über anderen Inhalten liegt */
+    position: absolute;
+    left: 300px;
+    top: 20px;
+    color: yellow;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    z-index: 1000;
+}
+.level{
+    position: absolute;
+    left: 300px;
+    top: 60px;
+    color: yellow;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    z-index: 1000;
 }
 

@@ -36,9 +36,7 @@ Pacman.Ghost = function (game, map, colour) {
         };
     };
 
-    /* Collision detection(walls) is done when a ghost lands on an
-     * exact block, make sure they dont skip over it 
-     */
+
     function addBounded(x1, x2) { 
         var rem    = x1 % 10, 
             result = rem + x2;
@@ -286,6 +284,7 @@ Pacman.User = function (game, map) {
 
     function addScore(nScore) { 
         score += nScore;
+        document.getElementById('scoreValue').innerText = score;
         if (score >= 10000 && score - nScore < 10000) { 
             lives += 1;
         }
@@ -305,6 +304,7 @@ Pacman.User = function (game, map) {
 
     function initUser() {
         score = 0;
+        document.getElementById('scoreValue').innerText = score;
         lives = 3;
         newLevel();
     }
@@ -786,9 +786,9 @@ var PACMAN = (function () {
 
     function drawScore(text, position) {
         ctx.fillStyle = "#FFFFFF";
-        ctx.font      = "12px BDCartoonShoutRegular";
-        ctx.fillText(text, 
-                     (position["new"]["x"] / 10) * map.blockSize, 
+       ctx.font      = "12px BDCartoonShoutRegular";
+        ctx.fillText(text,
+                    (position["new"]["x"] / 10) * map.blockSize,
                      ((position["new"]["y"] + 5) / 10) * map.blockSize);
     }
     
@@ -829,6 +829,7 @@ function updateHighscore() {
     function startNewGame() {
         setState(WAITING);
         level = 1;
+        document.getElementById("levelValue").innerHTML = level;
         user.reset();
         map.reset();
        
@@ -914,14 +915,13 @@ function getHighscoreCookie() {
     };
 
 //-----------------------------------------------------------------------------------------------------------
-// Ändere die drawFooter Funktion wie folgt:
 function drawFooter() {
     var topLeft  = (map.height * map.blockSize),
         textBase = topLeft + 17;
-    
+
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, topLeft, (map.width * map.blockSize), 30);
-    
+
     ctx.fillStyle = "#FFFF00";
 
     for (var i = 0, len = user.getLives(); i < len; i++) {
@@ -929,7 +929,7 @@ function drawFooter() {
         ctx.beginPath();
         ctx.moveTo(150 + (25 * i) + map.blockSize / 2,
                    (topLeft+1) + map.blockSize / 2);
-        
+
         ctx.arc(150 + (25 * i) + map.blockSize / 2,
                 (topLeft+1) + map.blockSize / 2,
                 map.blockSize / 2, Math.PI * 0.25, Math.PI * 1.75, false);
@@ -942,13 +942,12 @@ function drawFooter() {
 
     ctx.fillStyle = "#FFFF00";
     ctx.font      = "14px Calibri";
-    ctx.fillText("Score: " + user.theScore(), 30, textBase);
-    ctx.fillText("Level: " + level, 260, textBase);
-    
-    // Highscore aktualisieren, wenn der aktuelle Score höher ist
+    //ctx.fillText("Score: " + user.theScore(), 30, textBase);
+    //ctx.fillText("Level: " + level, 260, textBase);
+
     if (user.theScore() > highscore) {
     highscore = user.theScore();
-    setHighscoreCookie(highscore); // 👈 das fehlt noch!
+    setHighscoreCookie(highscore);
     document.getElementById('highscoreValue').textContent = highscore;
 }
 
@@ -1070,6 +1069,7 @@ function drawFooter() {
     function completedLevel() {
         setState(WAITING);
         level += 1;
+        document.getElementById("levelValue").innerHTML = level;
         map.reset();
         user.newLevel();
         startLevel();
@@ -1108,7 +1108,7 @@ function drawFooter() {
 
         for (i = 0, len = ghostSpecs.length; i < len; i += 1) {
             ghost = new Pacman.Ghost({
-    "getTick": getTick  // Hier die richtige Funktion übergeben############################################################################
+    "getTick": getTick
 }, map, ghostSpecs[i]);
 
             ghosts.push(ghost);
@@ -1132,7 +1132,7 @@ function drawFooter() {
         load(audio_files, function() { 
             loaded(); 
         });
-        updateHighscore(); // <--- DAS muss vorhanden sein!
+        updateHighscore();
     }
 
     function load(arr, callback) { 
@@ -1165,7 +1165,7 @@ function drawFooter() {
         "init" : init
     };
 
-})(); // Wichtig: korrekte Schließung
+})();
 
     
 
