@@ -6,10 +6,23 @@ body {
 }
 
 #pacman {
+    width: 80vw;    /* 80% der Fensterbreite */
+    height: 80vh;   /* 80% der Fensterhöhe */
+    border: 2px solid red; /* Sichtbarer Rahmen */
+    margin: auto;          /* Zentriert horizontal */
+    display: block;
+    background-color: black; /* Beispielhintergrund */
+}
+
+
+/*
+#pacman {
     width: auto;
     display: block;
     margin: 20px auto;
 }
+
+ */
 
 #shim {
     font-family: 'Permanent Marker', cursive;
