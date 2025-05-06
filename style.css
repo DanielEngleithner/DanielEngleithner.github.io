@@ -21,6 +21,7 @@ body {
     width: auto;
     display: block;
     margin: 20px auto;
+    border: solid red 4px;
 }
 
 
