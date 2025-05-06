@@ -46,4 +46,24 @@ p {
 
 canvas {
     border: 2px solid red;
+    width: 80vw;   /* 80% der Viewport-Breite */
+    height: 80vh;  /* 80% der Viewport-Höhe */
+    display: block;
 }
+
+
+.score {
+    position: fixed;       /* Fixiert die Position relativ zum Browserfenster */
+    top: 10px;             /* Abstand von oben */
+    left: 10px;            /* Abstand von links */
+    background-color: #f0f0f0;  /* Hellgrauer Hintergrund */
+    padding: 10px 15px;    /* Innenabstand */
+    border-radius: 5px;    /* Abgerundete Ecken */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* Leichter Schatten */
+    z-index: 1000;         /* Damit es über anderen Inhalten liegt */
+}
+
