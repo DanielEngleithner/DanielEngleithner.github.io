@@ -18,7 +18,7 @@ body {
 
 
 #pacman {
-    width: auto;
+    width: 100%;
     display: block;
     margin: 20px auto;
     border: solid red 4px;
