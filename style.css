@@ -46,10 +46,11 @@ p {
 
 canvas {
     border: 2px solid red;
-    width: 80vw;   /* 80% der Viewport-Breite */
-    height: 80vh;  /* 80% der Viewport-Höhe */
+    width: 400px;   /* 80% von 500px */
+    height: 320px;  /* 80% von 400px */
     display: block;
 }
+
 
 
 .score {
