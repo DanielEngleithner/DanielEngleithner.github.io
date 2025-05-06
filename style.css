@@ -46,8 +46,8 @@ p {
 
 canvas {
     border: 2px solid red;
-    width: 200px;   /* 80% von 500px */
-    height: 350px;
+    width: 20px;   /* 80% von 500px */
+    height: 35px;
     display: block;
 }
 
